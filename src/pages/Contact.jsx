@@ -76,7 +76,7 @@ export default function Contact() {
               📍 <b>Location:</b> Nairobi, Kenya
             </Typography>
             <Typography sx={{ mb: 2, fontSize: "1.05rem" }}>
-              📞 <b>Phone:</b> +254 712 345 678
+              📞 <b>Phone:</b> +254 721 959 741
             </Typography>
             <Typography sx={{ mb: 2, fontSize: "1.05rem" }}>
               ✉️ <b>Email:</b> greenhouse.seedlings@gmail.com
