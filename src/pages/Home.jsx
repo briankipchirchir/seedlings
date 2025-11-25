@@ -116,7 +116,7 @@ export default function EnhancedHomePage() {
             e.target.transform = "translateY(-2px)";
             e.target.boxShadow = "0 12px 32px rgba(0,0,0,0.3)";
           }}>
-            Explore Collection <ArrowRight size={20} style={{ marginLeft: "8px", display: "inline" }} />
+            Explore Our Collection <ArrowRight size={20} style={{ marginLeft: "8px", display: "inline" }} />
           </button>
         </div>
         <div style={{
@@ -224,7 +224,7 @@ export default function EnhancedHomePage() {
       {/* WHY CHOOSE US */}
       <section style={{ background: lightGreen, padding: "100px 24px" }}>
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          <h2 style={{ fontSize: "2.8rem", fontWeight: "900", color: primaryGreen, marginBottom: "60px", textAlign: "center" }}>Why GreenHouse Seedlings?</h2>
+          <h2 style={{ fontSize: "2.8rem", fontWeight: "900", color: primaryGreen, marginBottom: "60px", textAlign: "center" }}>Why Lebu Seedlings?</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px" }}>
             {reasons.map((reason, i) => (
               <div key={i} style={{

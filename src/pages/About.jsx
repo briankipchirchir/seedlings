@@ -1,193 +1,88 @@
-// src/pages/Products.jsx
-import React, { useState } from "react";
-import { Box, Typography, Grid, Paper, IconButton } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+// src/pages/About.jsx
+import React from "react";
+import { Box, Typography, Grid, Paper } from "@mui/material";
 
-export default function Products() {
-  const primaryGreen = "#2e7d32"; // Your main green color
-  const lightGreen = "#66bb6a";
-
-  const products = [
-    {
-      id: 1,
-      name: "Tomato Seedlings",
-      category: "Vegetable",
-      price: "$2.50",
-      image:
-        "https://media.istockphoto.com/id/670157616/photo/symmetrical-overview-of-lots-of-small-chrysanthemum-cuttings-in-long-rows.jpg?s=612x612&w=0&k=20&c=x2OAKMZx_016N7JDdQY3UZSwXEVr8zXnB2Y1D5dSX2w=",
-    },
-    {
-      id: 2,
-      name: "Basil Seedlings",
-      category: "Herb",
-      price: "$1.80",
-      image:
-        "https://www.farmanddairy.com/wp-content/uploads/2014/07/How-to-Tomatoes-696x232.jpg",
-    },
-    // Add more products here
-  ];
-
-  const [favorites, setFavorites] = useState({});
-  const [cart, setCart] = useState([]);
-
-  const toggleFavorite = (id) => {
-    setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
-  const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
-    alert(`${product.name} added to cart!`);
-  };
+export default function About() {
+  const primaryGreen = "#2e7d32";
+  const accentGreen = "#66bb6a";
 
   return (
-    <Box sx={{ px: { xs: 3, md: 10 }, py: { xs: 10, md: 14 } }}>
-      {/* Header */}
-      <Box sx={{ mb: 10, textAlign: "center" }}>
-        <Typography variant="h3" sx={{ fontWeight: 800 }}>
-          Our Products
+    <Box sx={{ backgroundColor: "#F5F5F5" }}>
+      {/* Hero Section */}
+      <Box sx={{ px: { xs: 3, md: 10 }, py: { xs: 10, md: 16 }, textAlign: "center" }}>
+        <Typography variant="h3" sx={{ fontWeight: 800, color: primaryGreen, mb: 2 }}>
+          About Us
         </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{
-            mt: 2,
-            color: "text.secondary",
-            maxWidth: 700,
-            mx: "auto",
-            lineHeight: 1.7,
-            fontSize: "1.1rem",
-          }}
-        >
-          Explore our premium range of greenhouse-raised seedlings — carefully
-          nurtured, healthy, and ready to thrive in your garden or farm.
+        <Typography sx={{ maxWidth: 800, mx: "auto", fontSize: "1.15rem", color: "text.secondary", lineHeight: 1.8 }}>
+          Welcome to our seedlings farm — proudly located in <strong>Tenwek Junction, Bomet County</strong>. 
+          I'm <strong>Caleb Kiprotich</strong>, and I founded this farm to provide farmers with strong, healthy, and affordable seedlings for better harvests.
         </Typography>
       </Box>
 
-      {/* Products Grid */}
-      <Grid container spacing={4}>
-        {products.map((product) => (
-          <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <Paper
-              elevation={0}
-              sx={{
-                borderRadius: 4,
-                overflow: "hidden",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
+      {/* Story Section */}
+      <Box sx={{ px: { xs: 3, md: 10 }, py: { xs: 5, md: 10 }, maxWidth: 900, mx: "auto" }}>
+        <Typography sx={{ fontSize: "1.15rem", lineHeight: 1.8, color: "text.secondary", mb: 4 }}>
+          Growing up in Bomet, I saw many farmers struggle with poor-quality seedlings, leading to low yields. 
+          I started this farm to bridge that gap and provide reliable, greenhouse-raised seedlings for farmers across the region.
+        </Typography>
+        <Typography sx={{ fontSize: "1.15rem", lineHeight: 1.8, color: "text.secondary", mb: 4 }}>
+          Our mission is to provide high-quality, disease-free seedlings nurtured under controlled greenhouse conditions. 
+          We aim to support farmers, enhance productivity, and contribute to sustainable agriculture in Kenya.
+        </Typography>
+      </Box>
+
+      {/* Why Choose Us Section */}
+      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#FFFFFF" }}>
+        <Typography variant="h4" sx={{ textAlign: "center", fontWeight: 700, color: primaryGreen, mb: 6 }}>
+          Why Choose Our Seedlings
+        </Typography>
+        <Grid container spacing={4} sx={{ maxWidth: 1000, mx: "auto" }}>
+          {[
+            { title: "Healthy & Vigorous", desc: "Greenhouse-raised seedlings grown under ideal conditions for maximum strength and survival." },
+            { title: "Disease Resistant", desc: "Carefully monitored seedbeds and pest-free environments ensure strong seedlings." },
+            { title: "Affordable Prices", desc: "Accessible prices for both small and large-scale farmers." }
+          ].map((item, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <Paper elevation={3} sx={{
+                p: 4, borderRadius: 3, textAlign: "center",
                 transition: "all 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-8px)",
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.16)",
-                },
-              }}
-            >
-              {/* Image */}
-              <Box sx={{ position: "relative", height: 240, overflow: "hidden" }}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    transition: "transform 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                />
+                "&:hover": { transform: "translateY(-8px)", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }
+              }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: primaryGreen, mb: 1 }}>{item.title}</Typography>
+                <Typography sx={{ color: "text.secondary" }}>{item.desc}</Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
 
-                {/* Category Badge */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 12,
-                    left: 12,
-                    bgcolor: primaryGreen,
-                    color: "#fff",
-                    px: 2,
-                    py: 0.5,
-                    borderRadius: "20px",
-                    fontSize: "0.75rem",
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {product.category}
-                </Box>
-
-                {/* Favorite Button */}
-                <IconButton
-                  onClick={() => toggleFavorite(product.id)}
-                  sx={{
-                    position: "absolute",
-                    top: 12,
-                    right: 12,
-                    bgcolor: "rgba(255,255,255,0.9)",
-                    width: 40,
-                    height: 40,
-                    "&:hover": {
-                      bgcolor: "#fff",
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                    },
-                  }}
-                >
-                  <FavoriteIcon
-                    sx={{ fontSize: 20, color: favorites[product.id] ? "#e53935" : primaryGreen }}
-                  />
-                </IconButton>
-              </Box>
-
-              {/* Product Details */}
-              <Box sx={{ p: 2 }}>
-                <Typography
-                  sx={{ fontSize: "1.1rem", fontWeight: 700, color: primaryGreen, mb: 1 }}
-                >
-                  {product.name}
-                </Typography>
-
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    pt: 1,
-                    borderTop: "1px solid rgba(0,0,0,0.08)",
-                  }}
-                >
-                  <Typography sx={{ fontSize: "1.2rem", fontWeight: 800, color: primaryGreen }}>
-                    {product.price}
-                  </Typography>
-
-                  <IconButton
-                    onClick={() => addToCart(product)}
-                    sx={{
-                      bgcolor: primaryGreen,
-                      color: "#fff",
-                      width: 44,
-                      height: 44,
-                      "&:hover": {
-                        bgcolor: "#256428",
-                        transform: "scale(1.1)",
-                      },
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    <ShoppingCartIcon sx={{ fontSize: 22 }} />
-                  </IconButton>
-                </Box>
-              </Box>
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
-
-      {/* Coming Soon Footer */}
-      <Box sx={{ mt: 10, textAlign: "center" }}>
-        <Typography variant="h6" sx={{ fontWeight: 600, opacity: 0.8 }}>
-          Full product catalogue coming soon.
+      {/* Mission, Vision & Values */}
+      <Box sx={{ py: { xs: 8, md: 12 } }}>
+        <Typography variant="h4" sx={{ textAlign: "center", fontWeight: 700, color: primaryGreen, mb: 6 }}>
+          Our Mission, Vision & Values
         </Typography>
-        <Typography sx={{ color: "text.secondary", mt: 1 }}>
-          More varieties, pricing, and availability will be added shortly.
-        </Typography>
+        <Grid container spacing={4} sx={{ maxWidth: 1000, mx: "auto" }}>
+          {[
+            { title: "Mission", desc: "Empower farmers with high-quality, healthy, and affordable seedlings for sustainable agriculture." },
+            { title: "Vision", desc: "To become the leading provider of greenhouse-grown seedlings in Kenya." },
+            { title: "Values", desc: "Quality • Integrity • Sustainability • Innovation • Customer Commitment" }
+          ].map((item, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <Paper elevation={2} sx={{ p: 4, borderRadius: 3, textAlign: "center" }}>
+                <Typography variant="h6" sx={{ color: primaryGreen, fontWeight: 700, mb: 1 }}>{item.title}</Typography>
+                <Typography sx={{ color: "text.secondary" }}>{item.desc}</Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      {/* Call to Action */}
+      <Box sx={{ py: 12, backgroundColor: primaryGreen, textAlign: "center", color: "#fff" }}>
+        <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>Visit Us Today at Tenwek Junction</Typography>
+        <Typography sx={{ mb: 2 }}>For orders, consultations, or bulk supplies — we are always ready to help farmers grow more.</Typography>
+        <Typography sx={{ fontWeight: 700 }}>📞 0712 345 678</Typography>
+        <Typography>📍 Tenwek Junction, Bomet County</Typography>
       </Box>
     </Box>
   );

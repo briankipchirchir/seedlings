@@ -156,7 +156,7 @@ export default function Footer() {
                     "&:hover": { color: accentGreen },
                   }}
                 >
-                  +1 (800) 476-9669
+                  0721959741
                 </Link>
               </Box>
             </Box>
