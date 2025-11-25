@@ -72,7 +72,8 @@ export default function Navbar() {
               color: primaryGreen,
               textDecoration: "none",
               letterSpacing: "-0.5px",
-              display: { xs: "none", sm: "block" },
+              display: { xs: "block", sm: "block" },
+              whiteSpace: "nowrap",
             }}
           >
             Lebu Seedlings
